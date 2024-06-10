@@ -18,7 +18,7 @@ public class UIKontrol : MonoBehaviour
     [SerializeField]
     GameObject oynaButon = default;
 
-    int puan;
+    int score;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,7 @@ public class UIKontrol : MonoBehaviour
 
     public void OyunBasladi()
     {
-        puan = 0;
+        score = 0;
         oyunAdiText.gameObject.SetActive(false);
         oynaButon.gameObject.SetActive(false);
         puanText.gameObject.SetActive(true);
@@ -45,7 +45,7 @@ public class UIKontrol : MonoBehaviour
 
     void PuaniGuncelle()
     {
-        puanText.text = "PUAN: " + puan;
+        puanText.text = "SCORE: " + score;
     }
 
     public void AsteoidYokOldu(GameObject asteroid)
@@ -53,15 +53,15 @@ public class UIKontrol : MonoBehaviour
         switch (asteroid.gameObject.name[8])
         {
             case '1':
-                puan += 5;
+                score += 5;
                 PuaniGuncelle();
                 break;
             case '2':
-                puan += 10;
+                score += 10;
                 PuaniGuncelle();
                 break;
             case '3':
-                puan += 15;
+                score += 15;
                 PuaniGuncelle();
                 break;
             default:
